@@ -1,0 +1,14 @@
+version: "3"
+services:
+  simple_file_upload:
+    container_name: simple_file_upload
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: python3 simple_file_upload.py
+    ports:
+      - 0.0.0.0:8080:8080
+    volumes:
+      - ./sources:/simple_file_upload
+    restart: always
+    working_dir: /simple_file_upload
